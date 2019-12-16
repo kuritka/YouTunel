@@ -1,0 +1,133 @@
+﻿<Window x:Class="YouTunelPutty20._Client.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:components="clr-namespace:YouTunelPutty20._Client.Components"
+        xmlns:converters="clr-namespace:YouTunelPutty20._Client.Converters"
+        xmlns:model="clr-namespace:YouTunelPutty20._Client.Model"
+        xmlns:viewModel="clr-namespace:YouTunelPutty20._Client.ViewModel"
+        Title="YouTunelPutty 2.0" Height="250" Width="235" Icon="..\Resources\Images\128YouTunel.ico" 
+        ResizeMode="CanMinimize" ShowInTaskbar="False" WindowStyle="None"  >
+   
+        
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel />        
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <converters:InverseBoolToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />        
+        <converters:InverseConnectionStateToBoolConverter x:Key="InverseConnectionStateToBoolConverter" />
+        <converters:ConnectionStateToVisibilityConverter x:Key="ConnectionStateToVisibilityConverter" />
+        
+    </Window.Resources>
+    
+    <Grid >
+        <Grid.Background>
+            <ImageBrush  ImageSource="{StaticResource YouTunelBackground}"   />
+        </Grid.Background>
+
+        <Border BorderThickness="1"  BorderBrush="#FF000000" CornerRadius="10"  />
+        <Image  Source="{StaticResource YouTunelBanner}" 
+                 HorizontalAlignment="Left" Margin="0,0,0,208.6" Width="300" 
+         />
+        <StackPanel Orientation="Vertical" Margin="10,46,10,0">
+            <!--http://stackoverflow.com/questions/9742348/is-it-possible-to-bind-a-combobox-itemssource-to-a-read-only-string-->
+            <ComboBox HorizontalAlignment="Left"  VerticalAlignment="Top" Width="215"
+                  ItemsSource="{Binding HostList, Source={x:Static model:ConnectionSingleton.Instance}}"
+                  SelectedValue="{Binding SelectedProxy, Mode=TwoWay}"
+                  IsEnabled="{Binding  ConnectionState, Converter={converters:InverseConnectionStateToBoolConverter}}"
+                  SelectedIndex="0"
+                  Cursor="Hand"
+                  DisplayMemberPath="Key"
+                  SelectedValuePath="Value"/>
+
+
+            <StackPanel Orientation="Horizontal" Height="20" Margin="-10,8,0,0">
+                <CheckBox Content="Explorer" 
+                          IsChecked="{Binding SetupExplorer}"   
+                          IsEnabled="{Binding  ConnectionState, Converter={converters:InverseConnectionStateToBoolConverter}}"
+                          Margin="10,0,0,0" 
+                          FontSize="9" FontFamily="Simplified Arabic" Foreground="#FF283E31" Cursor="Hand"/>
+
+                <CheckBox Content="Firefox" 
+                          IsChecked="{Binding SetupFirefox}"                             
+                          IsEnabled="{Binding  ConnectionState, Converter={converters:InverseConnectionStateToBoolConverter}}"                          
+                          Margin="10,0,0,0" 
+                          FontSize="9" FontFamily="Simplified Arabic" Foreground="#FF283E31" Cursor="Hand"/>               
+            </StackPanel>
+
+           
+
+            <StackPanel Height="95" Orientation="Vertical"  
+                        Visibility="{Binding ProxyNeedsAuthentication, Source={x:Static model:ConnectionSingleton.Instance}, 
+                        Converter={StaticResource BooleanToVisibilityConverter}}">
+                <StackPanel>
+                    <TextBlock Text="Vaše připojení vyžaduje Autorizaci. Prosím vyplňte přihlašovací údaje do vaší sítě ve tvaru [doména\username] a heslo" HorizontalAlignment="Left" 
+                               Height="29" VerticalAlignment="Top" Width="225"  
+                               FontSize="9" TextWrapping="WrapWithOverflow"  FontFamily="Simplified Arabic" Foreground="#FF283E31"/>
+                </StackPanel>
+                <StackPanel  Height="6" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="66" FontFamily="Arial Narrow"/>
+                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="{Binding DomainUser}"  
+                             VerticalAlignment="Top" Width="136"  IsEnabled="{Binding  ConnectionState, Converter={converters:InverseConnectionStateToBoolConverter}}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.276,0.844" Width="66" FontFamily="Arial Narrow" Height="23"/>
+                    <PasswordBox HorizontalAlignment="Left" Name="SdsfDfsSfgsf" Height="23" VerticalAlignment="Top" 
+                                 Width="136"  IsEnabled="{Binding  ConnectionState, Converter={converters:InverseConnectionStateToBoolConverter}}" />
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Height="87" Orientation="Vertical" Margin="10,0,0,5" 
+                        Visibility="{Binding ProxyNeedsAuthentication, Source={x:Static model:ConnectionSingleton.Instance}, Converter={StaticResource InverseBooleanToVisibilityConverter}}" >                
+                <TextBlock HorizontalAlignment="Left" 
+                    FontSize="9" TextWrapping="WrapWithOverflow"  FontFamily="Simplified Arabic" Foreground="#FF283E31">                        
+                        <Label>Mercedes v anonymním surfingu</Label>
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,11,10,0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10,0,0,0">                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,33,0">
+                        <CheckBox Content="" Style="{StaticResource GreenSwitchStyle}"
+                                    Command="{Binding ConnectCommand}" 
+                                    IsChecked="{Binding ConnectionState, Converter={converters:ConnectionStateToBoolConverter},Mode=TwoWay}"            
+                                    CommandParameter="{Binding ElementName=SdsfDfsSfgsf}" Cursor="Hand" />                        
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,3,0,0">
+                        <TextBlock FontSize="8" TextAlignment="Left">Vyp.</TextBlock>
+                        <TextBlock FontSize="8" TextAlignment="Right" Margin="37,0,0,0">Zap.</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Visibility="{Binding ConnectionState, Converter={converters:ConnectionStateToVisibilityConverter}}" >
+                    <components:AnimatedGifControl x:Name="GifCtrl"/>
+                    <TextBlock FontSize="8">Navazuji</TextBlock>
+                    <TextBlock FontSize="8">spojení</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10,0,0,0">
+                   <Button x:Name="HomeButton"  Command="{Binding HomeCommand}"  
+                           Width="26" Height="23"  Foreground="#FFF9F7F7" Style="{DynamicResource TransparentButton}" 
+                           HorizontalAlignment="Center" Background="#FFFAFAFB"   >
+                        <Image Source="{StaticResource YouTunelHome}" Stretch="Fill" Height="21" Width="23"/>
+                    </Button>
+                    <TextBlock FontSize="8">Domů</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10,0,0,0">
+                    <Button x:Name="HideButton" Command="{Binding HideWindowCommand}" 
+                            Width="26" Height="23" Foreground="#FFF9F7F7" Style="{DynamicResource TransparentButton}"
+                            HorizontalAlignment="Center" Background="#FFFAFAFB"  >
+                        <Image Source="{StaticResource YouTunelHide}" Stretch="Fill" Height="21" Width="23"/>
+                    </Button>
+                    <TextBlock FontSize="8">Schovat</TextBlock>
+                </StackPanel>
+                
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

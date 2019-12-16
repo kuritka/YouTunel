@@ -1,0 +1,17 @@
+C:\Temp\YouTunelPutty204\YouTunelPutty20\bin\Release\YouTunelPutty20.exe
+C:\Temp\YouTunelPutty204\YouTunelPutty20\bin\Release\YouTunelPutty20.pdb
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\_Client\Resources\MainWindowResources.baml
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\App.baml
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\_Client\View\MainWindow.g.cs
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\App.g.cs
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20_MarkupCompile.cache
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20_MarkupCompile.lref
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\_Client\View\MainWindow.baml
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\_Client\Resources\NotifyIconResources.baml
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20.g.resources
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20.Properties.Resource.resources
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20.csproj.GenerateResource.Cache
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20.exe
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20.pdb
+C:\Temp\YouTunelPutty204\YouTunelPutty20\obj\Release\YouTunelPutty20.csprojResolveAssemblyReference.cache

@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{964EBFBE-A600-49B2-BDD8-422B46F1D544}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YouTunelPutty20</RootNamespace>
+    <AssemblyName>YouTunelPutty20</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>_Client\Resources\Images\128YouTunel.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="_Client\View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renci.SshNet\AuthenticationMethod.cs" />
+    <Compile Include="Renci.SshNet\AuthenticationResult.cs" />
+    <Compile Include="Renci.SshNet\BaseClient.cs" />
+    <Compile Include="Renci.SshNet\Channels\Channel.cs" />
+    <Compile Include="Renci.SshNet\Channels\ChannelDirectTcpip.cs" />
+    <Compile Include="Renci.SshNet\Channels\ChannelDirectTcpip.NET40.cs" />
+    <Compile Include="Renci.SshNet\Channels\ChannelForwardedTcpip.cs" />
+    <Compile Include="Renci.SshNet\Channels\ChannelForwardedTcpip.NET40.cs" />
+    <Compile Include="Renci.SshNet\Channels\ChannelSession.cs" />
+    <Compile Include="Renci.SshNet\Channels\ChannelTypes.cs" />
+    <Compile Include="Renci.SshNet\Channels\ClientChannel.cs" />
+    <Compile Include="Renci.SshNet\Channels\IChannel.cs" />
+    <Compile Include="Renci.SshNet\Channels\IChannelDirectTcpip.cs" />
+    <Compile Include="Renci.SshNet\Channels\IChannelForwardedTcpip.cs" />
+    <Compile Include="Renci.SshNet\Channels\IChannelSession.cs" />
+    <Compile Include="Renci.SshNet\Channels\ServerChannel.cs" />
+    <Compile Include="Renci.SshNet\CipherInfo.cs" />
+    <Compile Include="Renci.SshNet\ClientAuthentication.cs" />
+    <Compile Include="Renci.SshNet\CommandAsyncResult.cs" />
+    <Compile Include="Renci.SshNet\Common\ASCIIEncoding.cs" />
+    <Compile Include="Renci.SshNet\Common\AsyncResult.cs" />
+    <Compile Include="Renci.SshNet\Common\AuthenticationBannerEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\AuthenticationEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\AuthenticationPasswordChangeEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\AuthenticationPrompt.cs" />
+    <Compile Include="Renci.SshNet\Common\AuthenticationPromptEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\BigInteger.cs" />
+    <Compile Include="Renci.SshNet\Common\ChannelDataEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\ChannelEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\ChannelOpenConfirmedEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\ChannelOpenFailedEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\ChannelRequestEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\DerData.cs" />
+    <Compile Include="Renci.SshNet\Common\ExceptionEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\Extensions.cs" />
+    <Compile Include="Renci.SshNet\Common\Extensions.NET.cs" />
+    <Compile Include="Renci.SshNet\Common\HostKeyEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\NetConfServerException.cs" />
+    <Compile Include="Renci.SshNet\Common\NetConfServerException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\ObjectIdentifier.cs" />
+    <Compile Include="Renci.SshNet\Common\PipeStream.cs" />
+    <Compile Include="Renci.SshNet\Common\PortForwardEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\ProxyException.cs" />
+    <Compile Include="Renci.SshNet\Common\ProxyException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\ScpDownloadEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\ScpException.cs" />
+    <Compile Include="Renci.SshNet\Common\ScpException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\ScpUploadEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\SemaphoreLight.cs" />
+    <Compile Include="Renci.SshNet\Common\SftpPathNotFoundException.cs" />
+    <Compile Include="Renci.SshNet\Common\SftpPathNotFoundException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\SftpPermissionDeniedException.cs" />
+    <Compile Include="Renci.SshNet\Common\SftpPermissionDeniedException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\ShellDataEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Common\SshAuthenticationException.cs" />
+    <Compile Include="Renci.SshNet\Common\SshAuthenticationException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\SshConnectionException.cs" />
+    <Compile Include="Renci.SshNet\Common\SshConnectionException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\SshData.cs" />
+    <Compile Include="Renci.SshNet\Common\SshException.cs" />
+    <Compile Include="Renci.SshNet\Common\SshException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\SshOperationTimeoutException.cs" />
+    <Compile Include="Renci.SshNet\Common\SshOperationTimeoutException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\SshPassPhraseNullOrEmptyException.cs" />
+    <Compile Include="Renci.SshNet\Common\SshPassPhraseNullOrEmptyException.NET40.cs" />
+    <Compile Include="Renci.SshNet\Common\TerminalModes.cs" />
+    <Compile Include="Renci.SshNet\Compression\CompressionMode.cs" />
+    <Compile Include="Renci.SshNet\Compression\Compressor.cs" />
+    <Compile Include="Renci.SshNet\Compression\Zlib.cs" />
+    <Compile Include="Renci.SshNet\Compression\ZlibOpenSsh.cs" />
+    <Compile Include="Renci.SshNet\Compression\ZlibStream.cs" />
+    <Compile Include="Renci.SshNet\ConnectionInfo.cs" />
+    <Compile Include="Renci.SshNet\ExpectAction.cs" />
+    <Compile Include="Renci.SshNet\ExpectAsyncResult.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPort.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortDynamic.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortDynamic.NET.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortDynamic.NET40.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortLocal.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortLocal.NET.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortLocal.NET40.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortRemote.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortRemote.NET.cs" />
+    <Compile Include="Renci.SshNet\ForwardedPortRemote.NET40.cs" />
+    <Compile Include="Renci.SshNet\HashInfo.cs" />
+    <Compile Include="Renci.SshNet\IAuthenticationMethod.cs" />
+    <Compile Include="Renci.SshNet\IConnectionInfo.cs" />
+    <Compile Include="Renci.SshNet\IForwardedPort.cs" />
+    <Compile Include="Renci.SshNet\IServiceFactory.cs" />
+    <Compile Include="Renci.SshNet\IServiceFactory.NET.cs" />
+    <Compile Include="Renci.SshNet\ISession.cs" />
+    <Compile Include="Renci.SshNet\ISubsystemSession.cs" />
+    <Compile Include="Renci.SshNet\KeyboardInteractiveAuthenticationMethod.cs" />
+    <Compile Include="Renci.SshNet\KeyboardInteractiveAuthenticationMethod.NET40.cs" />
+    <Compile Include="Renci.SshNet\KeyboardInteractiveConnectionInfo.cs" />
+    <Compile Include="Renci.SshNet\MessageEventArgs.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\BannerMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\FailureMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\InformationRequestMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\InformationResponseMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\PasswordChangeRequiredMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\PublicKeyMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\RequestMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\RequestMessageHost.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\RequestMessageKeyboardInteractive.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\RequestMessageNone.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\RequestMessagePassword.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\RequestMessagePublicKey.cs" />
+    <Compile Include="Renci.SshNet\Messages\Authentication\SuccessMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelCloseMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelDataMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelEofMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelExtendedDataMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelFailureMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpenConfirmationMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpenFailureMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpenFailureReasons.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpen\ChannelOpenInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpen\ChannelOpenMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpen\DirectTcpipChannelInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpen\ForwardedTcpipChannelInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpen\SessionChannelOpenInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelOpen\X11ChannelOpenInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\BreakRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\ChannelRequestMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\EndOfWriteRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\EnvironmentVariableRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\ExecRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\ExitSignalRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\ExitStatusRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\KeepAliveRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\PseudoTerminalInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\RequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\ShellRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\SignalRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\SubsystemRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\WindowChangeRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\X11ForwardingRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelRequest\XonXoffRequestInfo.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelSuccessMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\ChannelWindowAdjustMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\GlobalRequestMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\GlobalRequestName.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\RequestFailureMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Connection\RequestSuccessMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Message.cs" />
+    <Compile Include="Renci.SshNet\Messages\MessageAttribute.cs" />
+    <Compile Include="Renci.SshNet\Messages\ServiceName.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\DebugMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\DisconnectMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\DisconnectReason.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\IgnoreMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\IKeyExchangedAllowed.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeDhGroupExchangeGroup.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeDhGroupExchangeInit.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeDhGroupExchangeReply.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeDhGroupExchangeRequest.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeDhInitMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeDhReplyMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeEcdhInitMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeEcdhReplyMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\KeyExchangeInitMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\NewKeysMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\ServiceAcceptMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\ServiceRequestMessage.cs" />
+    <Compile Include="Renci.SshNet\Messages\Transport\UnimplementedMessage.cs" />
+    <Compile Include="Renci.SshNet\NetConfClient.cs" />
+    <Compile Include="Renci.SshNet\Netconf\INetConfSession.cs" />
+    <Compile Include="Renci.SshNet\Netconf\NetConfSession.cs" />
+    <Compile Include="Renci.SshNet\NoneAuthenticationMethod.cs" />
+    <Compile Include="Renci.SshNet\PasswordAuthenticationMethod.cs" />
+    <Compile Include="Renci.SshNet\PasswordAuthenticationMethod.NET40.cs" />
+    <Compile Include="Renci.SshNet\PasswordConnectionInfo.cs" />
+    <Compile Include="Renci.SshNet\PrivateKeyAuthenticationMethod.cs" />
+    <Compile Include="Renci.SshNet\PrivateKeyConnectionInfo.cs" />
+    <Compile Include="Renci.SshNet\PrivateKeyFile.cs" />
+    <Compile Include="Renci.SshNet\ProxyTypes.cs" />
+    <Compile Include="Renci.SshNet\ScpClient.cs" />
+    <Compile Include="Renci.SshNet\ScpClient.NET.cs" />
+    <Compile Include="Renci.SshNet\Security\Algorithm.cs" />
+    <Compile Include="Renci.SshNet\Security\CertificateHostAlgorithm.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\AsymmetricCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\BlockCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Cipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\CipherDigitalSignature.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\AesCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\Arc4Cipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\BlowfishCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\CastCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\CipherMode.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\CipherPadding.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\DesCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\Modes\CbcCipherMode.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\Modes\CfbCipherMode.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\Modes\CtrCipherMode.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\Modes\OfbCipherMode.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\Paddings\PKCS5Padding.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\Paddings\PKCS7Padding.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\RsaCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\SerpentCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\TripleDesCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Ciphers\TwofishCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\DigitalSignature.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\DsaDigitalSignature.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\DsaKey.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Hashes\MD5Hash.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Hashes\RIPEMD160Hash.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Hashes\SHA1Hash.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Hashes\SHA256Hash.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Hashes\SHA2HashBase.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Hashes\SHA384Hash.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Hashes\SHA512Hash.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\HMAC.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\Key.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\RsaDigitalSignature.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\RsaKey.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\StreamCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\Cryptography\SymmetricCipher.cs" />
+    <Compile Include="Renci.SshNet\Security\GroupExchangeHashData.cs" />
+    <Compile Include="Renci.SshNet\Security\HostAlgorithm.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchange.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeDiffieHellman.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeDiffieHellmanGroup14Sha1.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeDiffieHellmanGroup1Sha1.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeDiffieHellmanGroupExchangeSha1.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeDiffieHellmanGroupExchangeSha256.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeDiffieHellmanGroupExchangeShaBase.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeDiffieHellmanGroupSha1.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyExchangeEllipticCurveDiffieHellman.cs" />
+    <Compile Include="Renci.SshNet\Security\KeyHostAlgorithm.cs" />
+    <Compile Include="Renci.SshNet\ServiceFactory.cs" />
+    <Compile Include="Renci.SshNet\ServiceFactory.NET.cs" />
+    <Compile Include="Renci.SshNet\Session.cs" />
+    <Compile Include="Renci.SshNet\Session.NET.cs" />
+    <Compile Include="Renci.SshNet\Session.NET40.cs" />
+    <Compile Include="Renci.SshNet\SftpClient.cs" />
+    <Compile Include="Renci.SshNet\SftpClient.NET.cs" />
+    <Compile Include="Renci.SshNet\SftpClient.NET40.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Flags.cs" />
+    <Compile Include="Renci.SshNet\Sftp\ISftpSession.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\ExtendedRequests\FStatVfsRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\ExtendedRequests\HardLinkRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\ExtendedRequests\PosixRenameRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\ExtendedRequests\StatVfsRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpBlockRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpCloseRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpExtendedRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpFSetStatRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpFStatRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpInitRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpLinkRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpLStatRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpMkDirRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpOpenDirRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpOpenRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpReadDirRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpReadLinkRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpReadRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpRealPathRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpRemoveRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpRenameRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpRmDirRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpSetStatRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpStatRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpSymLinkRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpUnblockRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Requests\SftpWriteRequest.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\ExtendedReplies\ExtendedReplyInfo.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\ExtendedReplies\StatVfsReplyInfo.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpAttrsResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpDataResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpExtendedReplyResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpHandleResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpNameResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpStatusResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\SftpVersionResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\Responses\StatVfsResponse.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpDataMessage.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpDownloadAsyncResult.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpFile.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpFileAttributes.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpFileStream.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpFileSystemInformation.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpListDirectoryAsyncResult.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpMessage.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpMessageTypes.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpSession.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpSynchronizeDirectoriesAsyncResult.cs" />
+    <Compile Include="Renci.SshNet\Sftp\SftpUploadAsyncResult.cs" />
+    <Compile Include="Renci.SshNet\Sftp\StatusCodes.cs" />
+    <Compile Include="Renci.SshNet\Shell.cs" />
+    <Compile Include="Renci.SshNet\Shell.NET40.cs" />
+    <Compile Include="Renci.SshNet\ShellStream.cs" />
+    <Compile Include="Renci.SshNet\ShellStream.NET40.cs" />
+    <Compile Include="Renci.SshNet\SshClient.cs" />
+    <Compile Include="Renci.SshNet\SshCommand.cs" />
+    <Compile Include="Renci.SshNet\SshCommand.NET40.cs" />
+    <Compile Include="Renci.SshNet\SubsystemSession.cs" />
+    <Compile Include="_Client\Converters\ConnectionStateToBoolConverter.cs" />
+    <Compile Include="_Client\Converters\ConnectionStateToVisibilityConverter.cs" />
+    <Compile Include="_Client\Converters\InverseConnectionStateToBoolConverter.cs" />
+    <Compile Include="_Client\Extensions\IDisposableExtensions.cs" />
+    <Compile Include="_Client\Model\ApplicationStateSingleton.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="_Client\Converters\BaseConverter.cs" />
+    <Compile Include="_Client\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="_Client\Browsers\Browser.cs" />
+    <Compile Include="_Client\Model\ConnectionSingleton.Browsers.cs" />
+    <Compile Include="_Client\Constants.cs" />
+    <Compile Include="_Client\Components\AnimatedGIFControl.cs" />
+    <Compile Include="_Client\Browsers\ExplorerBrowserProxy.cs" />
+    <Compile Include="_Client\Browsers\BrowserProxySettings.cs" />
+    <Compile Include="_Client\Model\ConnectionSettings.cs" />
+    <Compile Include="_Client\Model\ConnectionSingleton.cs" />
+    <Compile Include="_Client\Model\ConnectionSingleton.YouTunelConnection.cs" />
+    <Compile Include="_Client\Browsers\IBrowserProxy.cs" />
+    <Compile Include="_Client\Converters\InverseBooleanConverter.cs" />
+    <Compile Include="_Client\Model\ConnectionState.cs" />
+    <Compile Include="_Client\ViewModel\MainWindowViewModel.Properties.cs" />
+    <Compile Include="_Client\View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="_Client\Resources\MainWindowResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_Client\Resources\NotifyIconResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="_Client\ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="_Client\Browsers\FirefoxBrowserProxy.cs" />
+    <Compile Include="_Client\ViewModel\MVVMBase.cs" />
+    <Compile Include="_Client\ViewModel\NotifyIconViewModel.cs" />
+    <Compile Include="NotifyIconWpf\BalloonIcon.cs" />
+    <Compile Include="NotifyIconWpf\Interop\BalloonFlags.cs" />
+    <Compile Include="NotifyIconWpf\Interop\IconDataMembers.cs" />
+    <Compile Include="NotifyIconWpf\Interop\IconState.cs" />
+    <Compile Include="NotifyIconWpf\Interop\MouseEvent.cs" />
+    <Compile Include="NotifyIconWpf\Interop\NotifyCommand.cs" />
+    <Compile Include="NotifyIconWpf\Interop\NotifyIconData.cs" />
+    <Compile Include="NotifyIconWpf\Interop\NotifyIconVersion.cs" />
+    <Compile Include="NotifyIconWpf\Interop\Point.cs" />
+    <Compile Include="NotifyIconWpf\Interop\TrayInfo.cs" />
+    <Compile Include="NotifyIconWpf\Interop\WinApi.cs" />
+    <Compile Include="NotifyIconWpf\Interop\WindowClass.cs" />
+    <Compile Include="NotifyIconWpf\Interop\WindowMessageSink.cs" />
+    <Compile Include="NotifyIconWpf\PopupActivationMode.cs" />
+    <Compile Include="NotifyIconWpf\RoutedEventHelper.cs" />
+    <Compile Include="NotifyIconWpf\TaskbarIcon.cs" />
+    <Compile Include="NotifyIconWpf\TaskbarIcon.Declarations.cs" />
+    <Compile Include="NotifyIconWpf\Util.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="coba_807923240_6666.private" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\128YouTunel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\background02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\background03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\gif-load.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\logo_thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Client\Resources\Images\youtunel_banner.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
